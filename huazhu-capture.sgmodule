@@ -1,0 +1,13 @@
+#!name=华住会小程序 Token 获取（临时）
+#!desc=仅在首次配置或 Token 失效时启用；获取成功后请关闭本模块。
+#!system=ios
+#!category=华住会
+
+[General]
+force-http-engine-hosts = %APPEND% appgw.huazhu.com
+
+[Script]
+华住会小程序 Token 获取 = type=http-request,pattern=^https:\/\/appgw\.huazhu\.com\/,script-path=https://raw.githubusercontent.com/Yoyyyyp/surge-huazhu/main/huazhu.js,requires-body=false,timeout=10
+
+[MITM]
+hostname = %APPEND% appgw.huazhu.com
